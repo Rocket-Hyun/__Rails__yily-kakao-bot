@@ -1,0 +1,45 @@
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>User key:</strong>
+  <%= @user.user_key %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @user.number %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @user.sex %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @user.age %>
+</p>
+
+<p>
+  <strong>State code:</strong>
+  <%= @user.state_code %>
+</p>
+
+<p>
+  <strong>Is premium:</strong>
+  <%= @user.is_premium %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+<hr /><br />
+<h3>이용 바우처</h3>
+<ul>
+  <% @user.vouchers.each do |voucher| %>
+    <li><%= voucher.drink.store.name %>(<%= voucher.drink.name %>)[<%= voucher.rating %>점] / (<%= voucher.created_at + 6.hours %>) / 사용함? (<%= voucher.is_used %>)</li>
+  <% end %>
+</ul>

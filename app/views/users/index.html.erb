@@ -1,0 +1,38 @@
+
+<h1>Listing Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User key</th>
+      <th>Number</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>State code</th>
+      <th>Is premium</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.user_key %></td>
+        <td><%= user.number %></td>
+        <td><%= user.sex %></td>
+        <td><%= user.age %></td>
+        <td><%= user.state_code %></td>
+        <td><%= user.is_premium %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', delete_user_path(user), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>

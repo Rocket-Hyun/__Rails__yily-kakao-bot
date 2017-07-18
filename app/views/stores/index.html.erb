@@ -1,0 +1,50 @@
+
+<h1>Listing Stores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Region code</th>
+      <th>Lat</th>
+      <th>Lng</th>
+      <th>Weekday voucher</th>
+      <th>Weekend voucher</th>
+      <th>Desc</th>
+      <th>Store img</th>
+      <th>Store url</th>
+      <th>Menu</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stores.each do |store| %>
+      <tr>
+        <td><%= store.name %></td>
+        <td><%= store.region_code %></td>
+        <td><%= store.lat %></td>
+        <td><%= store.lng %></td>
+        <td><%= store.weekday_voucher %></td>
+        <td><%= store.weekend_voucher %></td>
+        <td><%= store.desc %></td>
+        <td>
+          <%=
+          unless store.store_img.nil?
+            image_tag store.store_img, width:"100px"
+          end
+          %>
+        </td>
+        <td><%= store.store_url %></td>
+        <td><%= store.menu %></td>
+        <td><%= link_to 'Show', store %></td>
+        <td><%= link_to 'Edit', edit_store_path(store) %></td>
+        <td><%= link_to 'Destroy', delete_store_path(store), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Store', new_store_path %>

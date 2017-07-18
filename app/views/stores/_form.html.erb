@@ -1,0 +1,57 @@
+<%= form_for(@store) do |f| %>
+  <% if @store.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@store.errors.count, "error") %> prohibited this store from being saved:</h2>
+
+      <ul>
+      <% @store.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :region_code %><br>
+    <%= f.number_field :region_code %>
+  </div>
+  <div class="field">
+    <%= f.label :lat %><br>
+    <%= f.text_field :lat %>
+  </div>
+  <div class="field">
+    <%= f.label :lng %><br>
+    <%= f.text_field :lng %>
+  </div>
+  <div class="field">
+    <%= f.label :weekday_voucher %><br>
+    <%= f.text_field :weekday_voucher %>
+  </div>
+  <div class="field">
+    <%= f.label :weekend_voucher %><br>
+    <%= f.number_field :weekend_voucher %>
+  </div>
+  <div class="field">
+    <%= f.label :desc %><br>
+    <%= f.text_field :desc %>
+  </div>
+  <div class="field">
+    <%= f.label :store_img %><br>
+    <%= f.text_field :store_img %>
+  </div>
+  <div class="field">
+    <%= f.label :store_url %><br>
+    <%= f.text_field :store_url %>
+  </div>
+  <div class="field">
+    <%= f.label :menu %><br>
+    <%= f.text_field :menu %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

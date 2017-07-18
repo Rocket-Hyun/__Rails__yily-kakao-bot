@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  store: one
+  name: MyString
+  desc: MyString
+  drink_img: MyString
+
+two:
+  store: two
+  name: MyString
+  desc: MyString
+  drink_img: MyString

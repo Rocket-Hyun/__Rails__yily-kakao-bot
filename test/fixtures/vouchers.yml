@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  drink: one
+  is_used: false
+  issued_date: 2017-06-14 09:38:06
+
+two:
+  user: two
+  drink: two
+  is_used: false
+  issued_date: 2017-06-14 09:38:06

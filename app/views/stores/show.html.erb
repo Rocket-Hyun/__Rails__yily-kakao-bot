@@ -1,0 +1,90 @@
+
+<p>
+  <strong>Name:</strong>
+  <%= @store.name %>
+</p>
+
+<p>
+  <strong>Region code:</strong>
+  <%= @store.region_code %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @store.lat %>
+</p>
+
+<p>
+  <strong>Lng:</strong>
+  <%= @store.lng %>
+</p>
+
+<p>
+  <strong>Weekday voucher:</strong>
+  <%= @store.weekday_voucher %>
+</p>
+
+<p>
+  <strong>Weekend voucher:</strong>
+  <%= @store.weekend_voucher %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @store.desc %>
+</p>
+
+<p>
+  <strong>Store img:</strong>
+  <%=
+  unless @store.store_img.nil?
+    image_tag @store.store_img, width:"100px"
+  end
+  %>
+</p>
+
+<p>
+  <strong>Store url:</strong>
+  <%= @store.store_url %>
+</p>
+
+<p>
+  <strong>Menu:</strong>
+  <%= @store.menu %>
+</p>
+
+<%= link_to 'Edit', edit_store_path(@store) %> |
+<%= link_to 'Back', stores_path %>
+<br /><br />
+---------------------------------------------------------
+<div>
+  <h3><%= @store.name %>의 칵테일 리스트</h3>
+  <ul>
+    <% @store.drinks.each do |drink| %>
+      <li>
+        <%= drink.name %>  <%= link_to "[삭제]", store_delete_drink_path(store_id:@store.id, id:drink.id) %>
+      </li>
+    <% end %>
+  </ul>
+  <div>
+    <%= form_for([@store, @store.drinks.new]) do |f|  %>
+
+
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :desc %><br>
+        <%= f.text_field :desc %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+
+    <% end %>
+  </div>
+
+</div>
