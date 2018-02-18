@@ -11,3 +11,6 @@
 * 쿠폰 1회 발급시 재발급 방지 기능
 * 관리자 페이지 제공
 
+### 메인 로직
+
+[Message Controller Source Code](https://github.com/Rocket-Hyun/__Rails__yily-kakao-bot/blob/master/app/controllers/messages_controller.rb)
